@@ -1,3 +1,7 @@
+"""
+Based on code of https://github.com/bazingagin/IBA
+"""
+
 from scripts.information_bottleneck.IBA import *
 from scripts.information_bottleneck.fitting_estimators import *
 from scripts.utils import to_saliency_map
