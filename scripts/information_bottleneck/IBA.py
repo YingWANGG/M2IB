@@ -1,3 +1,7 @@
+"""
+Based on code of https://github.com/bazingagin/IBA
+"""
+
 import numpy as np
 import torch
 import torch.nn as nn
@@ -185,9 +189,9 @@ class IBAInterpreter:
 
     def calc_loss(self, outputs, labels):
         """ Calculate the combined loss expression for optimization of lambda """
-        information_loss = self.bottleneck.buffer_capacity.mean()
-        information_gain = self.fitting_estimator(outputs, labels).mean()
-        total = information_loss - self.beta * information_gain
+        compression_term = self.bottleneck.buffer_capacity.mean()
+        fitting_term = self.fitting_estimator(outputs, labels).mean()
+        total = compression_term - self.beta * fitting_term
         #print(information_loss, information_gain, total)
-        return information_loss,information_gain, total
+        return compression_term, fitting_term, total
 
