@@ -21,6 +21,13 @@ This repository contains the official implementation for
 
 [Jupyter Notebook](https://github.com/YingWANGG/M2IB/blob/main/demo.ipynb)
 
+```
+python scripts/eval.py
+--data_path <your data path, containing image paths and corresponding captions>
+--output_path <your output path that will store the evaluation results>
+--samples <number of samples randomly drawn from the image-text pairs in data_path>
+```
+
 ### Citation
 If you found our paper or code useful, please cite it as:
 ```
